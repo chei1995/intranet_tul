@@ -4754,7 +4754,9 @@ blockquote .shape {
   font-weight: 400;
   margin-top: 5px;
 }
-
+.dashboard .main-content  .single-list p {
+  word-wrap: break-word;
+}
 .dashboard .main-content .activity-log {
   margin-top: 30px;
   background: #fff;

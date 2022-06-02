@@ -5,21 +5,6 @@ Author: GrayGrids
 
 (function () {
 
-	"use strict";
-
-	//===== Prealoder
-
-	window.onload = function () {
-		window.setTimeout(fadeout, 200);
-	}
-
-
-    function fadeout() {
-        document.querySelector('.preloader').style.opacity = '0';
-        document.querySelector('.preloader').style.display = 'none';
-    }
-
-
     /*=====================================
     Sticky
     ======================================= */
@@ -52,16 +37,27 @@ Author: GrayGrids
     new WOW().init();
 
     //
-    let searchBtn = document.querySelector(".search-room button.btn")
+    // let searchBtn = document.querySelector(".search-room button.btn")
 
-    searchBtn.addEventListener("click",function(e){
-        e.preventDefault();
-        document.querySelector(".meeting-room").setAttribute("style","display:block")
-        window.scrollTo({
-            top: 1000,
-            behavior: "smooth"
-        });
-    })
-    
+    // searchBtn.addEventListener("click",function(e){
+    //     e.preventDefault();
+    //     document.querySelector(".meeting-room").setAttribute("style","display:block")
+    //     window.scrollTo({
+    //         top: 1000,
+    //         behavior: "smooth"
+    //     });
+    // })
+    let Today = new Date();
+    let dateInp = document.querySelector("input[type=date]");
+    let date = Today.getDate();
+    let mouth = Today.getMonth()+1;
+    if(date < 10){
+        date= "0" + date;
+    }
+    if(mouth < 10){
+        mouth= "0" + mouth;
+    }
+    dateInp.setAttribute("min",`${Today.getFullYear()}-${mouth}-${date}`);
+    dateInp.setAttribute("max",`${Today.getFullYear()+2}-${mouth}-${date}`)
 })();
 
