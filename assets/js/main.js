@@ -36,17 +36,18 @@ Author: GrayGrids
     // WOW active
     new WOW().init();
 
-    //
-    // let searchBtn = document.querySelector(".search-room button.btn")
+    
+    let searchBtn = document.querySelector(".search-room button.btn")
 
-    // searchBtn.addEventListener("click",function(e){
-    //     e.preventDefault();
-    //     document.querySelector(".meeting-room").setAttribute("style","display:block")
-    //     window.scrollTo({
-    //         top: 1000,
-    //         behavior: "smooth"
-    //     });
-    // })
+    searchBtn.addEventListener("click",function(e){
+        e.preventDefault();
+        document.querySelector(".meeting-room").setAttribute("style","display:block")
+        window.scrollTo({
+            top: 1000,
+            behavior: "smooth"
+        });
+    })
+    
     let Today = new Date();
     let dateInp = document.querySelector("input[type=date]");
     let date = Today.getDate();
